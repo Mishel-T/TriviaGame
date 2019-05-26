@@ -14,8 +14,8 @@
     var startBtn= $("#start-btn");
     var doneBtn= $("#done-btn");
     var timer=  $("#timer");
-    var questions= $("#questions");
-    var answers= $("#answers");
+    var questionDisplay= $("#questions");
+    var answerDisplay= $("#answers");
    
     
 
@@ -63,11 +63,23 @@ $(document).ready(function firstPage() {
 
        };
 
-    //push questions from array to question and answer arrays and create row each time
-    for (var i=0; i <questions.length; i++) {
-        $(questions).append(questions[i]);
-        console.log(questions)
-    }
+    //push questions from array to question rows and create a row each time
+    for (var i=0; i<questions.length; i++) {
+        var qRow = $("<h3>")
+        qRow.addClass("col-md-12")
+        qRow.text(questions[i])
+        $(questionDisplay).append(qRow);
+        console.log(questions[i]);
+
+    };
+
+   
+        
+        
+    //push answers from array to answer row and createa a row each time... how to nestle this 
+    //under each question row?? Also, have to be radio button inputs
+    //create for loop to iterate through answer array and create a radio button and the append to end of 
+    //each corresponding qRow
     
     //set conditional for if time runs out, run done function
 }
